@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 import requests
 import time
+from requests.cookies import create_cookie
 
 
  # URL final post-login
@@ -39,12 +40,13 @@ def main():
     session = requests.Session()
 
     for c in cookies:
-        session.cookies.set(
+        cookie = create_cookie(
             name=c['name'],
             value=c['value'],
-            ##domain=c['domain'],
-            ##path=c['path']
+            path=c['path']
         )
+    session.cookies.set_cookie(cookie)
+
 
     print("➡️ Consumiento API con cookies...")
 
