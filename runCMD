@@ -1,0 +1,9 @@
+
+
+# en una terminal
+python mockIDP.py
+
+
+# en otra terminal
+python mockSP.py
+
