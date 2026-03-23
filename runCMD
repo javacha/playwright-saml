@@ -7,3 +7,7 @@ python mockIDP.py
 # en otra terminal
 python mockSP.py
 
+
+# en otra terminal
+python saml.py
+
