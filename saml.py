@@ -13,6 +13,10 @@ def main():
     # Perform SAML login and capture cookies
     cookies = perform_saml_login(TARGET_URL, EXPECTED_AUTH_URL)
 
+    if not cookies:
+        print("❌ Error: El login SAML no se completó correctamente.")
+        return  # Exit the program if login fails
+
     # Convert cookies to requests format
     session = requests.Session()
     for c in cookies:
